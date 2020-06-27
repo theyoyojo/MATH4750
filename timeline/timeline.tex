@@ -2,13 +2,14 @@
 \usepackage{url,amsmath,amsthm,enumitem,amsfonts,tikz,verbatim,amssymb, wasysym, clrscode3e, booktabs, soul}
 % \usepackage[doublespacing]{setspace}
 \usepackage[makeroom]{cancel}
+\usepackage{natbib}
 \usetikzlibrary{arrows}
 
 \title{ University of Massachusetts Lowell \protect\\
 	DEPARTMENT OF MATHEMATICAL SCIENCES \protect\\
 MATH 4750 \protect\\
 Updated proposal for Senior Seminar}
-\author{Joel Savitz \\ Summer  2020 \\ SID: 01739537}
+\author{Joel Savitz \\ Summer  2020 \\ SID: 01739537 \\ Revision 1}
 
 \newcommand{\reals}{\mathbb{R}}
 
@@ -22,16 +23,16 @@ Scientists express physical laws of
 the universe in the language of differential equations.
 The reason for this is not immediately obvious,
 though my personal work with differential equations
-has provided me with an indtuition as to why.
+has provided me with an intuition as to why.
 Fortunately for me,
-Siddiqi describes three necessary properties
-of a physical law that are satisfied by a differential equation \cite{whydiffeq}:
+one scientist describes three necessary properties
+of a physical law that are satisfied by a differential equation as: 
 
 
 \begin{itemize}
 	\item ``The mathematical relation must be sufficiently general"
 	\item ``It must define connections between neighboring points"
-	\item ``It must imply the continuity of change"
+	\item ``It must imply the continuity of change"\citep{whydiffeq}
 \end{itemize}
 
 Differential equations satisfy all three of these properties
@@ -56,13 +57,13 @@ Specifically, I plan to verify Newton's law of cooling
 using a sensor such the DS18D20,
 a waterproof temperature sensor compatible with the Raspberry Pi.
 These sensors are relatively innexpensive,
-with a 5 pack selling for $\$12.98$ on Amazon \cite{Amazon}.
+with a 5 pack selling for $\$12.98$ on Amazon \citep{Amazon}.
 
 Newton's law of cooling states that
 ``the rate of heat loss of a body is
 directly proportional to the difference
 in the temperatures between the body and
-its surroundings" \cite{wiki}.
+its surroundings" \citep{wiki}.
 
 If we let $T: \reals \to \reals$ be the temperature
 of some body at a time $t$
@@ -75,19 +76,20 @@ describes Newton's law of cooling.
 	\frac{dT}{dt} = -k(T - A) \textrm{ for some $k \in \reals$}
 \end{align}
 
-I will verify this law by experiementation.
+I will determine the value of $k$
+relative to a particular environment by experimentation.
 
 \section{Timeline}
 
 I propose a timeline for this project in figure \ref{timeline}
 in the same manner as I propose the timeline for
 my larger honors project to which this
-mathematical project is related \cite{rpi_plan}.
+mathematical project is related \citep{rpi_plan}.
 
 \subsection{Essential goals}
 
 \begin{enumerate}
-	\item[A1.] Verification of Newton's law of colling
+	\item[A1.] Verification of Newton's law of cooling
 	\item[A2.] Submission of archivable document describing this work
 \end{enumerate}
 
@@ -118,7 +120,7 @@ mathematical project is related \cite{rpi_plan}.
 
 \end{figure}
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrtnat}
 \bibliography{timeline}
 
 \end{document}
