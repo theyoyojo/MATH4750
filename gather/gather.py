@@ -42,5 +42,5 @@ signal.signal(signal.SIGINT, print_date_on_sigint)
 print("Begin sensor reading at {}".format(str(datetime.datetime.now())))
 while True:
     for i in range(NUM_SRCS):
-        print(read_temp(i),end=' ' if i < NUM_SRCS - 1 else '\n')
+        print(read_temp(i), end=' ' if i < NUM_SRCS - 1 else '\n')
     time.sleep(1)

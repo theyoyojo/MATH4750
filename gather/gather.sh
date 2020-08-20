@@ -13,13 +13,13 @@ DELIMITER
 FILENAME="data"
 TEE_ARGS="-a"
 
-while getopts "f:a" OPTION; do
+while getopts "f:o" OPTION; do
         case ${OPTION} in
                 f)
 			FILENAME="${OPTARG}"
                         ;;
-		a)
-			GATHER_APPEND=""
+		o)
+			TEE_ARGS=""
 			;;
                 *)
                         echo "Unknown option ${OPTION}, ignoring"
