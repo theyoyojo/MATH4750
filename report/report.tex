@@ -29,18 +29,19 @@ Senior Seminar Project Report}
 
 \begin{abstract}
 	In this paper,
-	I verify Newton's law of cooling my experimentation
-	using cheap and widely available sensors and devices
-	and free and open source software systems.
-	I find that the law is hold for this system,
-	and describe my particular system
+	I verify Newton's law of cooling by experimentation
+	using cheap and widely available sensors and devices,
+	and free and open source software systems,
+	including a few short original software programs.
+	I find that the law accurately describes this system,
+	and I mathematically describe the particular system
 	with a differential equation
 	that contains a numerically calculated cooling coefficient.
 \end{abstract}
 
 \section{Introduction}
 
-Scientists express physical laws of
+Scientists express the physical laws of
 the universe in the language of differential equations.
 The reason for this is not immediately obvious,
 though my personal work with differential equations
@@ -75,15 +76,15 @@ its surroundings" \citep{wiki}.
 Let $\Delta T$ be the difference between
 the temperature of the body
 and the ambient temperature of the environment
-as a function of a point in time $t$,
-we have that equation \ref{eq1}
+as a function of a point in time $t$.
+Then, we have that equation \ref{eq1}
 describes Newton's law of cooling.
 
 \begin{align} \label{eq1}
 	\frac{d\Delta T}{dt} = k\Delta T(t) \textrm{ for some $k \in \reals$}
 \end{align}
 
-Then, we can solve this differential equation by separating the parameters.
+Next, we can solve this differential equation by separating the parameters.
 
 \begin{align} \label{eq2}
 	\frac{dT}{dt}\frac{1}{\Delta T(t)} & = k \\
@@ -102,11 +103,11 @@ by fitting experimental data to equation \ref{eq3}.
 \section{Materials and Methods}
 
 I performed this experiment using
-using a hardware sensor
-to a Raspberry Pi computer,
+using hardware sensors
+connected to a Raspberry Pi computer,
 specifically the model 4B+ with 8GB of RAM.
 
-I purchased the DS18D20,
+I chose the DS18D20,
 a waterproof temperature sensor compatible with the Raspberry Pi.
 These sensors are relatively inexpensive,
 and I purchased a 5 pack for $\$12.98$ on Amazon \citep{Amazon}.
@@ -115,11 +116,11 @@ With the equipment in hand,
 I set up the physical system
 on a small table
 where I had previously configured
-my two raspberry pi computers.
-I wired the sensors to the raspberry pi using
-a breadboard, as seen in figure \ref{fig3}.
+my two Raspberry Pi computers.
+I wired the sensors to the Raspberry Pi using
+a breadboard.
 
-As you can see in \ref{fig2},
+As you can see in figure \ref{fig2},
 the system lies under my air conditioner
 set to cool my room to 70 degrees Fahrenheit.
 Primarily, this was to keep my room comfortable,
@@ -131,7 +132,7 @@ To prepare the system,
 I simply filled a mug with tap water
 and placed it in the microwave
 for about a minute.
-Then, as seen in figure \ref{fig2},
+Then, as shown in figure \ref{fig3},
 I placed one of the temperature sensors
 inside of the water
 and another right next to it,
@@ -167,7 +168,7 @@ The sensors gathered the data
 for just over 4 hours.
 The full dataset is accessible
 in the project git repository
-as the file \texttt{gather/data2} \cite{project_repo}.
+as the file \texttt{gather/data2} \citep{project_repo}.
 As seen in figure \ref{fig1},
 the raw data contained
 a sharp oscillating pattern
@@ -201,7 +202,7 @@ and we can write the following differential equation
 to approximate this system:
 
 \begin{align}
-	\frac{d\Delta T}{dt} = 3.658 \times 10^{-4}\Delta T(t)
+	\frac{d\Delta T}{dt} = -3.658 \times 10^{-4}\Delta T(t)
 \end{align}
 
 \begin{figure}
@@ -231,7 +232,7 @@ on a wide variety of systems,
 given that the temperatures of concern
 are within the detection range of the sensors
 and the operating temperature of the nearby
-raspberry pi computer.
+Raspberry Pi computer.
 In a small but significant sense,
 this experiment demonstrates the democratization of the scientific process,
 for almost anyone could acquire the same equipment,
@@ -241,9 +242,9 @@ The beauty of scientific and mathematical progress and discovery
 lies in its objective nature.
 This physical law describes the behavior of physical systems
 whether a person believes in their validity or not,
-and the most skeptical mind may take matters into their own hands
+and a skeptical mind may take matters into their own hands
 and validate this equation as I have,
-with no need to appeal to an authority other than nature itself.
+with no need to appeal any authority other than nature itself.
 
 \medskip
 \noindent
