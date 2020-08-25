@@ -55,9 +55,9 @@ plt.plot(x_data, y_data, 'b--', label='data')
 
 # Plot the curve we fitted to the data
 plt.plot(x_data, exponential_decay(x_data, *popt), 'r-',
-        label='fit:I=%.3E, C=%.3E, O=%.3E' % tuple(popt))
+        label='fit: I=%.3E, C=%.3E, O=%.3E' % tuple(popt))
 
-plt.xlabel('Time (units = seconds, interval = %.3f)')
+plt.xlabel('Time (units = seconds, interval = %.3f)' % x_units)
 plt.ylabel('Temperature (units = degrees celcius)')
 plt.legend()
 
