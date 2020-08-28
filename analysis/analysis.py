@@ -28,19 +28,32 @@ def exponential_decay(t, I, C, O):
 
 # If we don't have datafile, we can't do anything
 if len(sys.argv) < 2:
-    print("usage: analysis.py <datafile>")
+    print("usage: analysis.py <datafile> [0|1]")
     sys.exit(0)
 
 
 # Get the raw data from the datafile
 datafile = sys.argv[1]
+
+# Optional restriction to a single column of the data
+opt = "deadbeef"
+if len(sys.argv) > 2:
+    opt = sys.argv[2]
+
 lines = getlines(datafile)
 
 # Calculate the duration of the sensor reading
 duration = calculate_duration(stamp_stripper(lines[0]), stamp_stripper(lines[-1]))
 
 # Turn temperature readings into differences of type float
-y_data = [nums[1] - nums[0] for nums in [list(map(numpy.float64, s[0:-1].split(' '))) for s in lines[1:-1]]]
+y_data_pairs = [list(map(numpy.float64, s[0:-1].split(' '))) for s in lines[1:-1]]
+
+if opt == "0":
+    y_data = [nums[0] for nums in y_data_pairs ]
+elif opt == "1":
+    y_data = [nums[1] for nums in y_data_pairs ]
+else:
+    y_data = [nums[1] - nums[0] for nums in y_data_pairs ]
 
 # Calculate the time interval by dividing the total duration by the number of data points
 x_range = len(y_data)
